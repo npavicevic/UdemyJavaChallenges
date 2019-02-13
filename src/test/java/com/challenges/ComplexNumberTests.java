@@ -13,6 +13,10 @@ public class ComplexNumberTests {
         one.add(1, 1);
         assertEquals(2.0, one.getReal());
         assertEquals(2.0, one.getImaginary());
+
+        one.add(number);
+        assertEquals(4.5, one.getReal());
+        assertEquals(0.5, one.getImaginary());
     }
 
     @Test
@@ -27,5 +31,15 @@ public class ComplexNumberTests {
         number.subtract(one);
         assertEquals(4.0, number.getReal());
         assertEquals(-4.0, number.getImaginary());
+
+        one = new ComplexNumber(1.0, 1.0);
+        one.subtract(2.5, -1.5);
+        assertEquals(-1.5, one.getReal());
+        assertEquals(2.5, one.getImaginary());
+
+        number = new ComplexNumber(2.5, -1.5);
+        number.subtract(1.0, 1.0);
+        assertEquals(1.5, number.getReal());
+        assertEquals(-2.5, number.getImaginary());
     }
 }
